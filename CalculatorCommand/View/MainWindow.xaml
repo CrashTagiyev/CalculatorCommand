@@ -1,0 +1,45 @@
+﻿<Window x:Class="CalculatorCommand.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorCommand"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="355" Width="210">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock x:Name="Calc_Equal_TextBlock"  FontSize="20" Height="35"  VerticalAlignment="Top" TextAlignment="Right"></TextBlock>
+            <TextBlock x:Name="Calc_Txt_Block"   FontSize="40" Height="60.25"  VerticalAlignment="Top"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Grid Height="60"  Width="210" Background="gray">
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,160,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}" >1</Button>
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,60,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}" >2</Button>
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,-40,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}" >3</Button>
+                <Button x:Name="Sum_Button" Style="{StaticResource Calc_Button_Style}" Margin="0,0,-140,0" Click="Number_Button_Click" Command="{Binding OperatorsCommand}">+</Button>
+                </Grid>
+                <Grid Height="60"  Width="210" Background="gray">
+                    <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,160,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}">4</Button>
+                    <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,60,0"  Click="Number_Button_Click" Command="{Binding NumbersCommand}">5</Button>
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,-40,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}">6</Button>
+                <Button x:Name="Minus_Button" Style="{StaticResource Calc_Button_Style}" Margin="0,0,-140,0" Click="Number_Button_Click" Command="{Binding OperatorsCommand}">-</Button>
+                </Grid>
+                <Grid Height="60"  Width="210" Background="gray">
+                    <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,160,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}">7</Button>
+                    <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,60,0"  Click="Number_Button_Click" Command="{Binding NumbersCommand}">8</Button>
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,-40,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}" >9</Button>
+                <Button x:Name="Multiply_Button" Style="{StaticResource Calc_Button_Style}" Margin="0,0,-140,0" Click="Number_Button_Click" Command="{Binding OperatorsCommand}">*</Button>
+                </Grid>
+                <Grid Height="60"  Width="210" Background="gray">
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,160,0" Command="{Binding DeleteCommand}">Del</Button>
+                <Button Style="{StaticResource Calc_Button_Style}" Margin="0,0,60,0" Click="Number_Button_Click" Command="{Binding NumbersCommand}" >0</Button>
+                <Button x:Name="Equal_Button" Style="{StaticResource Calc_Button_Style}" Command="{Binding OperatorsCommand}" Margin="0,0,-40,0" >=</Button>
+                <Button x:Name="Divide_Button" Style="{StaticResource Calc_Button_Style}" Margin="0,0,-140,0" Click="Number_Button_Click" Command="{Binding OperatorsCommand}">/</Button>
+                </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
